@@ -173,7 +173,7 @@ const Canvas = () => {
       //make sure we don't drag out of viewport
       if (
         mouseX > canvasRight - item.data.width ||
-        mouseY > canvasBottom - item.data.height
+        mouseY > canvasBottom - item.data.height * 1.5
       ) {
         return;
       }
