@@ -28,6 +28,7 @@ const Canvas = () => {
       canvasWidth: wrapperWidth,
       canvasHeight: Math.floor((wrapperWidth / 16) * 9),
     });
+    if (trackImg.current) drawImages();
   };
 
   /**
@@ -272,6 +273,12 @@ const Canvas = () => {
 
   return (
     <div ref={wrapperRef} id="canvas">
+      <div className="cta">
+        <div className="instructions">
+          Press on the button to choose which image you want selected
+        </div>
+        <button onClick={selectImage}>Toggle Image</button>
+      </div>
       <canvas
         ref={canvasRef}
         width={size.canvasWidth}
@@ -281,12 +288,6 @@ const Canvas = () => {
         onMouseUp={(e) => handleMouseUp(e)}
         onMouseOut={(e) => handleMouseOut(e)}
       />
-      <div className="cta">
-        <div className="instructions">
-          Press on the button to choose which image you want selected
-        </div>
-        <button onClick={selectImage}>Toggle Image</button>
-      </div>
     </div>
   );
 };
